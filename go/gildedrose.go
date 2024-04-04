@@ -1,4 +1,4 @@
-package gilded_rose
+package gildedrose
 
 type Item struct {
 	name          string
@@ -6,16 +6,16 @@ type Item struct {
 	quality       int
 }
 
-type Items []*Item
+type GildedRose struct{}
 
-func (items Items) ProcessItemsEndOfDay() {
-	for i := 0; i < len(items); i++ {
-		items[i].ProcessItemEndOfDay()
+func (GildedRose) ProcessItemsEndOfDay(i []*Item) {
+	for j := 0; j < len(i); j++ {
+		i[j].ProcessItemEndOfDay()
 	}
 }
 
-func (item Item) ProcessItemEndOfDay() {
-	if item.name != "Aged Brie" && item.name != "Concert Tickets" {
+func (item *Item) ProcessItemEndOfDay() {
+	if item.name != "Aged Cheddar" && item.name != "Concert Tickets" {
 		if item.quality > 0 {
 			if item.name != "Hammer" {
 				item.quality = item.quality - 1
