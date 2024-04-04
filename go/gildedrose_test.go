@@ -1,8 +1,6 @@
 package gildedrose
 
-import (
-	"testing"
-)
+import "testing"
 
 func TestNormalItemBeforeSellDate(t *testing.T) {
 	items := []*Item{{"randomstring", 5, 10}}
